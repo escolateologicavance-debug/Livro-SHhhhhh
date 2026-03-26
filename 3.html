@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grande Tribulação e Milênio</title>
+
+<style>
+
+body{
+margin:0;
+font-family:serif;
+color:white;
+overflow:hidden;
+background:black;
+}
+
+/* FUNDO */
+
+.fundo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("3-img.png") center/cover no-repeat;
+animation:zoom 30s ease-in-out infinite alternate;
+z-index:-3;
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+
+/* NEBLINA */
+
+.neblina{
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 60%);
+animation:nevoa 40s linear infinite;
+z-index:-2;
+}
+
+@keyframes nevoa{
+from{transform:translateX(-20%) translateY(0);}
+to{transform:translateX(20%) translateY(-10%);}
+}
+
+/* VENTO */
+
+.vento{
+position:fixed;
+bottom:0;
+width:200%;
+height:120px;
+background:linear-gradient(
+90deg,
+rgba(255,255,255,0.05),
+rgba(255,255,255,0.15),
+rgba(255,255,255,0.05)
+);
+animation:vento 7s linear infinite;
+z-index:-1;
+}
+
+@keyframes vento{
+0%{transform:translateX(-30%);}
+100%{transform:translateX(30%);}
+}
+
+/* CONTAINER */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:60px 25px;
+background:rgba(0,0,0,0.55);
+min-height:100vh;
+}
+
+/* TITULO */
+
+h1{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* TEXTO */
+
+#texto{
+font-size:22px;
+line-height:1.7;
+white-space:pre-line;
+}
+
+/* BOTÃO */
+
+.botao{
+display:block;
+margin:60px auto;
+padding:14px 34px;
+font-size:18px;
+background:white;
+color:black;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="fundo"></div>
+<div class="neblina"></div>
+<div class="vento"></div>
+
+<div class="container">
+
+<h1>Grande Tribulação e Milênio</h1>
+
+<div id="texto"></div>
+
+<button class="botao" onclick="location.href='4.html'">
+Prosseguir
+</button>
+
+</div>
+
+<script>
+
+const texto = `
+1. O Messias não é Promessa para a Igreja, mas para Israel.
+
+2. A Grande Tribulação não é Profecia para a Igreja, mas para Israel.
+
+3. O Anticristo vai se manifestar não contra a Igreja, mas contra Israel.
+
+4. Não haverá mais Salvação após o Arrebatamento, exceto para Israel.
+`;
+
+let i = 0;
+
+function digitar(){
+
+if(i < texto.length){
+
+document.getElementById("texto").innerHTML += texto.charAt(i);
+
+i++;
+
+setTimeout(digitar,35);
+
+}
+
+}
+
+digitar();
+
+</script>
+
+</body>
+</html>
