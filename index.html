@@ -18,40 +18,30 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
+background:black;
 font-family:serif;
-color:white;
+}
 
-background-image:url("espantalho.png");
+.capa{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("capa.png");
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
-}
-
-.container{
-max-width:800px;
-padding:20px;
-}
-
-.frase{
-font-size:42px;
-line-height:1.4;
-}
-
-.autor{
-margin-top:20px;
-font-size:20px;
 }
 
 .botao{
 position:absolute;
-bottom:60px;
-padding:12px 30px;
-font-size:20px;
+bottom:70px;
+padding:14px 35px;
+font-size:22px;
 background:white;
 color:black;
 border:none;
-border-radius:6px;
+border-radius:8px;
 cursor:pointer;
 }
 
@@ -61,29 +51,16 @@ cursor:pointer;
 
 <body>
 
-<div class="container">
+<div class="capa"></div>
 
-<div class="frase">
-Onde a Bíblia não tem voz,<br>
-não devíamos ter ouvido
-</div>
-
-<div class="autor">
-John Trapp (1601–1669)
-</div>
-
-</div>
-
-<button class="botao" onclick="location.href='2.html'">
-SUMÁRIO
+<button class="botao" onclick="location.href='1.html'">
+INICIAR
 </button>
 
 <script>
-
 if ('serviceWorker' in navigator) {
 navigator.serviceWorker.register('sw.js');
 }
-
 </script>
 
 </body>
