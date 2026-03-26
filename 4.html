@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>O Messias é Promessa para Israel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Alef', serif;
+margin:0;
+background:white;
+color:#222;
+line-height:1.7;
+}
+
+header{
+text-align:center;
+padding:25px;
+border-bottom:2px solid #ddd;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+img{
+width:100%;
+max-width:420px;
+display:block;
+margin:30px auto;
+border-radius:6px;
+}
+
+button{
+padding:10px 20px;
+margin:6px;
+border:none;
+background:black;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+
+.controls{
+text-align:center;
+margin-bottom:25px;
+}
+
+.hebrew{
+font-size:26px;
+direction:rtl;
+font-weight:bold;
+text-align:center;
+margin:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div vw class="enabled">
+<div vw-access-button class="active"></div>
+<div vw-plugin-wrapper>
+<div class="vw-plugin-top-wrapper"></div>
+</div>
+</div>
+
+<header>
+<h2>O Messias não é Promessa para a Igreja, mas para Israel</h2>
+</header>
+
+<div class="container">
+
+<div class="controls">
+<button onclick="falar()">🔊 Ouvir</button>
+<button onclick="parar()">⏹ Parar</button>
+</div>
+
+<div id="texto">
+
+<p>A expectativa do Messias não nasceu entre os povos da terra. Ela surgiu dentro da revelação concedida exclusivamente a Israel.</p>
+
+<p>A primeira promessa messiânica aparece logo após a queda da humanidade:</p>
+
+<p><b>Gênesis 3:15</b></p>
+
+<p>"E porei inimizade entre ti e a mulher, entre a tua descendência e a sua descendência; esta te ferirá a cabeça, e tu lhe ferirás o calcanhar."</p>
+
+<p>Essa declaração é conhecida pelos estudiosos como <i>Protoevangelho</i>, a primeira promessa de redenção. Contudo, essa promessa começaria a tomar forma dentro de uma linhagem específica.</p>
+
+<p>Essa linhagem surge com Abraão.</p>
+
+<p>Deus estabelece com ele o pacto que definiria toda a história messiânica:</p>
+
+<p><b>Gênesis 12:3</b></p>
+
+<p>"Em ti serão benditas todas as famílias da terra."</p>
+
+<p>A partir desse momento, a promessa do Messias passa a caminhar dentro da história de Israel.</p>
+
+<p>No hebraico bíblico, o termo usado para Messias é:</p>
+
+<div class="hebrew">מָשִׁיחַ</div>
+
+<p><b>Mashiach</b> significa literalmente <i>Ungido</i>. Era o título dado aos reis escolhidos por Deus.</p>
+
+<p>Entre todos os reis de Israel, Davi tornou-se o grande modelo messiânico.</p>
+
+<p>Deus prometeu que um descendente seu governaria para sempre:</p>
+
+<p><b>2 Samuel 7:12-16</b></p>
+
+<p>Esse pacto transformou o Messias esperado no chamado <b>Filho de Davi</b>.</p>
+
+<p>Assim como Davi subjugou as nações ao redor de Israel, o Mashiach esperado restauraria o reino e colocaria as nações sob sua autoridade.</p>
+
+<p>Por isso nenhum outro povo aguardava esse Messias. Para as nações não fazia sentido esperar um governante que viria justamente para dominá-las.</p>
+
+<p>A expectativa messiânica pertence à esperança nacional de Israel.</p>
+
+<p>Os profetas reforçaram essa esperança repetidas vezes.</p>
+
+<p><b>Isaías 11</b> fala do descendente de Jessé que governaria com justiça.</p>
+
+<p><b>Miquéias 5:2</b> anuncia que o governante de Israel sairia de Belém.</p>
+
+<p>Mas uma das profecias mais extraordinárias encontra-se em:</p>
+
+<p><b>Isaías 9:6</b></p>
+
+<p>"Porque um menino nos nasceu, um filho se nos deu; e o principado está sobre os seus ombros; e o seu nome será:</p>
+
+<p><b>Maravilhoso Conselheiro, Deus Forte, Pai da Eternidade, Príncipe da Paz.</b></p>
+
+<p>Essa profecia é profundamente judaica em seu contexto.</p>
+
+<p>O texto anuncia o nascimento de um rei davídico que governaria Israel e estabeleceria um reino eterno de paz.</p>
+
+<p>O profeta descreve o Messias com títulos que revelam autoridade divina e governo absoluto.</p>
+
+<p>O principado sobre seus ombros indica governo real.</p>
+
+<p>Isso reforça que o Mashiach não é apenas um mestre espiritual, mas um rei prometido dentro da estrutura política e espiritual de Israel.</p>
+
+<p>Por isso os judeus aguardavam o Messias como restaurador do reino.</p>
+
+<p>Os evangelhos preservam essa expectativa quando repetidamente aparece a expressão:</p>
+
+<p><b>"Filho de Davi"</b></p>
+
+<p>Esse título messiânico mostra que a esperança continua ligada às promessas feitas à casa de Davi.</p>
+
+<p>Assim, o Mashiach é objeto de espera dentro da história de Israel.</p>
+
+<p>Não é a Igreja que aguarda o Messias como promessa profética.</p>
+
+<p>A Igreja aguarda o retorno de Cristo.</p>
+
+<p>Mas a promessa messiânica, em sua origem profética, pertence a Israel.</p>
+
+</div>
+
+<img src="4-img.png">
+
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+let synth = window.speechSynthesis;
+let fala;
+
+function falar(){
+let texto = document.getElementById("texto").innerText;
+fala = new SpeechSynthesisUtterance(texto);
+fala.lang="pt-BR";
+synth.speak(fala);
+}
+
+function parar(){
+synth.cancel();
+}
+</script>
+
+</body>
+</html>
