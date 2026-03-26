@@ -1,6 +1,5 @@
 const cacheName = 'v1-nazare';
 const assets = [
-  './',
   './index.html',
   './manifest.json',
   './1.html', './2.html', './3.html', './4.html', './5.html',
