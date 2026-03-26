@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Capítulo 2 - O Retentor - A Vírgula de Nazaré</title>
+    <style>
+        :root {
+            --ouro: #FFD700;
+            --preto: #000000;
+            --preto-cadillac: #080808;
+            --branco: #ffffff;
+            --sombra-text: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        body {
+            background: linear-gradient(to bottom, #001a33, var(--preto));
+            color: var(--branco);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Efeito de Digitação (Typewriter) */
+        .digitando::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+            color: var(--ouro);
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Estilo para os Pontos Teológicos */
+        .lista-teologica {
+            max-width: 600px;
+            text-align: left;
+            margin-top: 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .lista-teologica li {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ddd;
+            line-height: 1.6;
+            text-shadow: var(--sombra-text);
+            /* Escondido no início para o script revelar */
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .lista-teologica li.revelado {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .destaque-ouro {
+            color: var(--ouro);
+            font-weight: bold;
+        }
+
+        /* --- Recurso 3D Avançado (Cartão com Profundidade) --- */
+        .moldura-3d {
+            perspective: 1500px; /* Profundidade da cena */
+            width: 320px;
+            height: 480px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .cartao-personagem {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out; /* Suavidade no movimento */
+            cursor: pointer;
+        }
+
+        /* A imagem do homem com o taco (2-img.png) */
+        .cartao-personagem img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover; /* Garante que a imagem preencha o cartão */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+            filter: grayscale(30%) contrast(110%); /* Ajuste de tom terno/escuro */
+        }
+
+        /* Efeito Parallax: Faz o taco/letras "saltarem" */
+        .taco-3d {
+            position: absolute;
+            top: 60%; /* Ajuste baseado na sua imagem */
+            left: 50%;
+            transform: translateZ(50px) translateX(-50%); /* Profundidade maior */
+            color: var(--ouro);
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            pointer-events: none; /* Não atrapalha o toque */
+        }
+
+        /* Nav Links */
+        .nav-links { display: flex; justify-content: space-between; width: 100%; max-width: 600px; margin-top: 50px; padding: 20px; }
+        .nav-links a { color: var(--ouro); text-decoration: none; font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+    <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+
+    <h2 style="color:var(--ouro); text-align:center; font-family:'Times New Roman', serif;">A CIÊNCIA DA RETENÇÃO</h2>
+
+    <div class="moldura-3d" id="scene">
+        <div class="cartao-personagem" id="card">
+            <img src="2-img.png" alt="O Retentor - Homem com taco de beisebol">
+            <div class="taco-3d">← O Impedimento</div>
+        </div>
+    </div>
+
+    <div style="background:#111; padding:15px; border-radius:10px; border:1px dashed var(--ouro); margin: 20px 0;">
+        <audio controls style="width: 100%;">
+            <source src="2-audio.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div id="apologetica-container" style="text-align:center;">
+        <p class="chancela" style="font-size: 1.3rem; margin-bottom: 20px;">A <span class="destaque-ouro">Ciência Exata</span> revela que:</p>
+        
+        <ol class="lista-teologica" id="typer-list">
+            <li>1. O Messias não é Promessa para a Igreja mas para <span class="destaque-ouro">Israel</span>.</li>
+            <li>2. A Grande Tribulação não é Profecia para a Igreja, mas para <span class="destaque-ouro">Israel</span>.</li>
+            <li>3. A Manifestação do anticristo não será contra a Igreja, mas contra <span class="destaque-ouro">Israel</span>.</li>
+            <li>4. Não Haverá mais Salvação após o Arrebatamento da Igreja, exceto para <span class="destaque-ouro">Israel</span>.</li>
+        </ol>
+    </div>
+
+    <div class="nav-links">
+        <a href="1.html">← Capítulo 1</a>
+        <a href="sumario.html">SUMÁRIO</a>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+        // --- SCRIPT 1: Movimento 3D Reativo ---
+        const scene = document.getElementById('scene');
+        const card = document.getElementById('card');
+
+        function handleMove(e) {
+            let x, y;
+            if (e.type === 'touchmove') {
+                x = e.touches[0].clientX;
+                y = e.touches[0].clientY;
+            } else {
+                x = e.clientX;
+                y = e.clientY;
+            }
+
+            const bounding = scene.getBoundingClientRect();
+            const centerX = bounding.left + bounding.width / 2;
+            const centerY = bounding.top + bounding.height / 2;
+
+            // Calcula a inclinação baseada na posição do dedo/mouse
+            const rotX = (centerY - y) / 15; // Ajuste a sensibilidade
+            const rotY = (x - centerX) / 15;
+
+            card.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+
+        // Reseta a posição ao soltar
+        function handleEnd() { card.style.transform = 'rotateX(0deg) rotateY(0deg)'; }
+
+        scene.addEventListener('mousemove', handleMove);
+        scene.addEventListener('touchmove', handleMove);
+        scene.addEventListener('mouseleave', handleEnd);
+        scene.addEventListener('touchend', handleEnd);
+
+        // --- SCRIPT 2: Efeito Typewriter (Digitação) Sequencial ---
+        const listItems = document.querySelectorAll('#typer-list li');
+        let currentItem = 0;
+
+        function typeWriter(itemIndex) {
+            if (currentItem >= listItems.length) return; // Fim da lista
+
+            const item = listItems[itemIndex];
+            const originalText = item.innerHTML;
+            item.innerHTML = ''; // Limpa para digitar
+            item.classList.add('digitando', 'revelado'); // Mostra o li e adiciona o cursor
+            
+            let i = 0;
+            const speed = 30; // Velocidade da digitação (ms por letra)
+
+            function type() {
+                if (i < originalText.length) {
+                    // Trata as tags HTML (como span) para não quebrá-las
+                    if (originalText[i] === '<') {
+                        const tagEnd = originalText.indexOf('>', i) + 1;
+                        item.innerHTML += originalText.slice(i, tagEnd);
+                        i = tagEnd;
+                    } else {
+                        item.innerHTML += originalText[i];
+                        i++;
+                    }
+                    setTimeout(type, speed);
+                } else {
+                    // Terminou de digitar este item
+                    item.classList.remove('digitando'); // Tira o cursor
+                    currentItem++;
+                    // Pequena pausa antes de começar o próximo ponto
+                    setTimeout(() => typeWriter(currentItem), 800);
+                }
+            }
+            type();
+        }
+
+        // Inicia a digitação após 1 segundo que a página carrega
+        window.onload = () => { setTimeout(() => typeWriter(0), 1000); };
+
+    </script>
+</body>
+</html>
