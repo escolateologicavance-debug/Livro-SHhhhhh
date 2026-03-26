@@ -8,7 +8,7 @@ const assets = [
   './6.html', './7.html', './8.html', './9.html', './10.html',
   './11.html', './12.html', './13.html', './14.html', './15.html',
   './16.html', './17.html', './18.html', './19.html', './20.html',
-  './1-img.png', './2-img.png', './3-img.png', './4-img.png', './5-img.png',
+  './espantalho.png', './2-img.png', './3-img.png', './4-img.png', './5-img.png',
   './6-img.png', './7-img.png', './8-img.png', './9-img.png', './10-img.png',
   './11-img.png', './12-img.png', './13-img.png', './14-img.png', './15-img.png',
   './16-img.png', './17-img.png', './18-img.png', './19-img.png', './20-img.png'
