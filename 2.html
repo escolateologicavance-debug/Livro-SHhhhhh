@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHhhhhhh</title>
+
+<style>
+
+body{
+margin:0;
+font-family:serif;
+color:white;
+overflow-x:hidden;
+background:black;
+}
+
+/* FUNDO ANIMADO */
+
+.fundo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("2-img.png");
+background-size:cover;
+background-position:center;
+animation:zoom 25s ease-in-out infinite alternate;
+z-index:-1;
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
+}
+
+/* CONTEÚDO */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+text-align:left;
+background:rgba(0,0,0,0.55);
+min-height:100vh;
+}
+
+/* TEXTO */
+
+#texto{
+font-size:22px;
+line-height:1.6;
+white-space:pre-line;
+}
+
+/* BOTÃO */
+
+.botao{
+display:block;
+margin:60px auto;
+padding:14px 35px;
+font-size:18px;
+background:white;
+color:black;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="fundo"></div>
+
+<div class="container">
+
+<div id="texto"></div>
+
+<button class="botao" onclick="location.href='3.html'">
+Prosseguir
+</button>
+
+</div>
+
+<script>
+
+const texto = `
+1. O Messias não é Promessa para a Igreja, mas para Israel.
+
+2. A Grande Tribulação não é Profecia para a Igreja, mas para Israel.
+
+3. A Manifestação do anticristo não será contra a Igreja, mas contra Israel.
+
+4. Não haverá mais Salvação após o Arrebatamento da Igreja, exceto para Israel.
+`;
+
+let i = 0;
+const velocidade = 35;
+
+function digitar(){
+
+if(i < texto.length){
+
+document.getElementById("texto").innerHTML += texto.charAt(i);
+
+i++;
+
+setTimeout(digitar, velocidade);
+
+}
+
+}
+
+digitar();
+
+</script>
+
+</body>
+</html>
