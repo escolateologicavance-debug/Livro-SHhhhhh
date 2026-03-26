@@ -1,41 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="manifest.json">
-    <title>A Vírgula de Nazaré</title>
-    <style>
-        :root { --ouro: #FFD700; --azul: #001a33; --preto: #000000; --branco: #ffffff; }
-        body { margin:0; background: linear-gradient(to bottom, var(--azul), var(--preto)); color: var(--branco); font-family: 'Times New Roman', serif; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        h1 { color: var(--ouro); font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 10px; }
-        .autor-box { border-top: 2px solid var(--branco); border-bottom: 2px solid var(--branco); padding: 10px 40px; font-family: sans-serif; font-weight: bold; letter-spacing: 3px; font-size: 1.2rem; }
-        .btn-acessar { margin-top: 50px; background: transparent; color: var(--ouro); border: 2px solid var(--ouro); padding: 15px 60px; font-size: 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
-        .btn-acessar:hover { background: var(--ouro); color: black; }
-        #installBtn { display: none; position: absolute; top: 20px; background: var(--branco); border: none; padding: 10px; border-radius: 5px; font-weight: bold; cursor: pointer; }
-    </style>
-</head>
-<body>
-    <button id="installBtn">INSTALAR APP</button>
-    <h1>A VÍRGULA DE<br>NAZARÉ</h1>
-    <div class="autor-box">GILBERTO MOREIRA</div>
-    <a href="teste.html" class="btn-acessar">ACESSAR</a>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
-        }
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            document.getElementById('installBtn').style.display = 'block';
-        });
-        document.getElementById('installBtn').addEventListener('click', () => {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then((choice) => { if (choice.outcome === 'accepted') document.getElementById('installBtn').style.display = 'none'; });
-        });
-    </script>
+<title>SHhhhhhh</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-family:serif;
+color:white;
+
+background-image:url("img/espantalho.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.container{
+max-width:800px;
+padding:20px;
+}
+
+.frase{
+font-size:42px;
+line-height:1.4;
+}
+
+.autor{
+margin-top:20px;
+font-size:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="frase">
+Onde a Bíblia não tem voz,<br>
+não devíamos ter ouvido
+</div>
+
+<div class="autor">
+John Trapp (1601–1669)
+</div>
+
+</div>
+
 </body>
 </html>
