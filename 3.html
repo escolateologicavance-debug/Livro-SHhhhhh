@@ -12,7 +12,6 @@ body{
 margin:0;
 font-family:serif;
 color:white;
-overflow:hidden;
 background:black;
 }
 
@@ -25,51 +24,7 @@ left:0;
 width:100%;
 height:100%;
 background:url("3-img.png") center/cover no-repeat;
-animation:zoom 30s ease-in-out infinite alternate;
 z-index:-3;
-}
-
-@keyframes zoom{
-from{transform:scale(1);}
-to{transform:scale(1.08);}
-}
-
-/* NEBLINA */
-
-.neblina{
-position:fixed;
-width:200%;
-height:200%;
-background:radial-gradient(circle, rgba(255,255,255,0.08) 10%, transparent 60%);
-animation:nevoa 40s linear infinite;
-z-index:-2;
-}
-
-@keyframes nevoa{
-from{transform:translateX(-20%) translateY(0);}
-to{transform:translateX(20%) translateY(-10%);}
-}
-
-/* VENTO */
-
-.vento{
-position:fixed;
-bottom:0;
-width:200%;
-height:120px;
-background:linear-gradient(
-90deg,
-rgba(255,255,255,0.05),
-rgba(255,255,255,0.15),
-rgba(255,255,255,0.05)
-);
-animation:vento 7s linear infinite;
-z-index:-1;
-}
-
-@keyframes vento{
-0%{transform:translateX(-30%);}
-100%{transform:translateX(30%);}
 }
 
 /* CONTAINER */
@@ -117,8 +72,6 @@ cursor:pointer;
 <body>
 
 <div class="fundo"></div>
-<div class="neblina"></div>
-<div class="vento"></div>
 
 <div class="container">
 
@@ -154,7 +107,7 @@ document.getElementById("texto").innerHTML += texto.charAt(i);
 
 i++;
 
-setTimeout(digitar,35);
+setTimeout(digitar,22);
 
 }
 
