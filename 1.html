@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHhhhhhh</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-family:serif;
+color:white;
+
+background-image:url("espantalho.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.container{
+max-width:800px;
+padding:20px;
+}
+
+.frase{
+font-size:42px;
+line-height:1.4;
+}
+
+.autor{
+margin-top:20px;
+font-size:20px;
+}
+
+.botao{
+position:absolute;
+bottom:60px;
+padding:12px 30px;
+font-size:20px;
+background:white;
+color:black;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="frase">
+Onde a Bíblia não tem voz,<br>
+não devíamos ter ouvido
+</div>
+
+<div class="autor">
+John Trapp (1601–1669)
+</div>
+
+</div>
+
+<button class="botao" onclick="location.href='2.html'">
+SUMÁRIO
+</button>
+
+<script>
+
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('sw.js');
+}
+
+</script>
+
+</body>
+</html>
